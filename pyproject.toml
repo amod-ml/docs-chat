@@ -1,0 +1,17 @@
+[project]
+name = "docs-chat"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "agno>=1.7.4",
+    "bs4>=0.0.2",
+    "python-dotenv>=1.1.1",
+    "qdrant-client>=1.14.3",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.12.4",
+]
