@@ -7,9 +7,13 @@ requires-python = ">=3.13"
 dependencies = [
     "agno>=1.7.4",
     "bs4>=0.0.2",
+    "fastapi>=0.116.1",
     "google-genai>=1.26.0",
+    "psycopg[binary]>=3.2.9",
     "python-dotenv>=1.1.1",
     "qdrant-client>=1.14.3",
+    "sqlalchemy>=2.0.41",
+    "uvicorn>=0.35.0",
 ]
 
 [dependency-groups]
