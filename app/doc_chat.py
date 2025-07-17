@@ -6,12 +6,14 @@ from agno.embedder.google import GeminiEmbedder
 from agno.models.google import Gemini
 from agno.playground import Playground, serve_playground_app
 from agno.knowledge.website import WebsiteKnowledgeBase
+from agno.storage.postgres import PostgresStorage
 from agno.vectordb.qdrant import Qdrant
 
 load_dotenv(override=True)
 
 COLLECTION_NAME = "website-content"
 
+db_url = "postgresql+psycopg://ai:ai@localhost:5532/ai"
 
 vector_db = Qdrant(
     collection=COLLECTION_NAME,
@@ -52,6 +54,10 @@ agent = Agent(
         "Important: Use tables where possible.",
     ],
     markdown=True,
+    storage=PostgresStorage(
+        table_name="rag_agent_sessions",
+        db_url=db_url,
+    ),
 )
 
 
