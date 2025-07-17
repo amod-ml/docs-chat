@@ -8,8 +8,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-- Python 3.8+
-- [Poetry](https://python-poetry.org/docs/) for Python dependency management.
+- Python 3.12+
+- [uv](https://docs.astral.sh/uv/) for Python dependency management.
 - [Node.js](https://nodejs.org/en) and [pnpm](https://pnpm.io/) for the frontend.
 - A running Postgres database.
 - A running Qdrant instance.
@@ -25,7 +25,7 @@ These instructions will get you a copy of the project up and running on your loc
 2.  **Set up the backend:**
     - Install the Python dependencies:
       ```bash
-      make install-backend
+      uv sync
       ```
     - Create a `.env` file in the root of the project and add the following environment variables:
       ```
